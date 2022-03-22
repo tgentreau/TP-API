@@ -4,8 +4,8 @@ export class GetAPI {
 
     constructor() {
         this.API_KEY = "6634d49f"
-        this.URL_FILM_BY_NAME = `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=`
-        this.URL_FILM_BY_ID = `http://www.omdbapi.com/?apikey=${this.API_KEY}&i=`
+        this.URL_FILM_BY_NAME = `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=`
+        this.URL_FILM_BY_ID = `https://www.omdbapi.com/?apikey=${this.API_KEY}&i=`
         this.ul = document.querySelector('#films')
         this.res = document.querySelector('#nbrResult')
         this.pagination = document.querySelector('#pagination')
