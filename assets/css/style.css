@@ -107,6 +107,7 @@ header {
 
 .wrapper #films .cards {
     display: flex;
+    width: 130%;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
