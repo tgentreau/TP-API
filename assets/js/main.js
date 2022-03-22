@@ -6,10 +6,6 @@ let form = document.querySelector('#form')
 let nameFilm = document.querySelector('#name')
 let err = document.querySelector('#error')
 let res = document.querySelector('#nbrResult')
-let moins = document.querySelector('#moins')
-let current = document.querySelector('#current')
-let plus = document.querySelector('#plus')
-let page = 1
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
