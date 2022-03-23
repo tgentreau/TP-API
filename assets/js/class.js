@@ -44,24 +44,39 @@ export class GetAPI {
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
                 `
+                console.log(data);
                 let moins = document.querySelector('#moins')
                 let current = document.querySelector('#current')
                 let plus = document.querySelector('#plus')
                 let page = 1
-                // let maxPage = Math.round(data.totalResults / 10)
-                // for(let i = 0; i < maxPage; i++){
+                let maxPage = Math.round(data.totalResults / 10)
+                if(page < maxPage) {
+                    console.log(maxPage);
                     plus.addEventListener('click', () => {
                         page = page + 1
+                        if(page > maxPage) {
+                            console.log(`${page}, ${maxPage}`);
+                            this.pagination.innerHTML = ""
+                            err.innerHTML = "Tu vas trop loin, essaie une nouvelle recherche"
+                        }
                         this.getFilmByPage(film, page)
                         current.innerHTML = page
                         window.location.href = "index.html#header"
                     })
+                }
+                if(page >= 1) {
                     moins.addEventListener('click', () => {
                         page = page - 1
+                        if(page < 1) {
+                            console.log(`${page}`);
+                            this.pagination.innerHTML = ""
+                            err.innerHTML = "Il n'y a rien par ici, essaie une nouvelle recherche"
+                        }
                         this.getFilmByPage(film, page)
                         current.innerHTML = page
                         window.location.href = "index.html#header"
                     })
+                }
                 // }
                 let img = document.querySelectorAll('.img')
                 for(let i = 0; i < img.length; i++) {
