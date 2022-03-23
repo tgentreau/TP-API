@@ -48,18 +48,21 @@ export class GetAPI {
                 let current = document.querySelector('#current')
                 let plus = document.querySelector('#plus')
                 let page = 1
-                plus.addEventListener('click', () => {
-                    page = page + 1
-                    this.getFilmByPage(film, page)
-                    current.innerHTML = page
-                    window.location.href = "index.html#header"
-                })
-                moins.addEventListener('click', () => {
-                    page = page - 1
-                    getAllFilm.getFilmByPage(nameFilm.value, page)
-                    current.innerHTML = page
-                    window.location.href = "index.html#header"
-                })
+                // let maxPage = Math.round(data.totalResults / 10)
+                // for(let i = 0; i < maxPage; i++){
+                    plus.addEventListener('click', () => {
+                        page = page + 1
+                        this.getFilmByPage(film, page)
+                        current.innerHTML = page
+                        window.location.href = "index.html#header"
+                    })
+                    moins.addEventListener('click', () => {
+                        page = page - 1
+                        this.getFilmByPage(film, page)
+                        current.innerHTML = page
+                        window.location.href = "index.html#header"
+                    })
+                // }
                 let img = document.querySelectorAll('.img')
                 for(let i = 0; i < img.length; i++) {
                     img[i].addEventListener('click', () => {
